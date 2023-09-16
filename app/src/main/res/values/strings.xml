@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Upwork-QRCode-Generator-Android-App</string>
+    <string name="loading">Loading…</string>
+    <string name="enter_text_to_generate_qr_code">Enter Text to Generate QR Code</string>
+    <string name="generate_qr_code">Generate QR Code</string>
+    <string name="todo">TODO</string>
 </resources>
