@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements CountryNameListen
         }
         else
         {
-            countryTextView.setText(String.format("%s%s", countryTextView.getText(), sessionManagement.getCountry()));
+            countryTextView.setText(String.format("%s %s", sessionManagement.getCountry(), countryTextView.getText()));
         }
 
         char letter =  RandomLetterFromWord.getRandomLetter();
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements CountryNameListen
     @Override
     public void onCountryNameReceived(String countryName) {
         sessionManagement.setCountry(countryName);
-        countryTextView.setText(String.format("%s%s", countryTextView.getText(), countryName));
+        countryTextView.setText(String.format("%s %s", sessionManagement.getCountry(), countryTextView.getText()));
     }
 
 }

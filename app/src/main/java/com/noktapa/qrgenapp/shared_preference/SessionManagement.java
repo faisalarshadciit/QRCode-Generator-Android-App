@@ -3,12 +3,9 @@ package com.noktapa.qrgenapp.shared_preference;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.google.gson.Gson;
-
 public class SessionManagement {
     private static final String MyPREFERENCES = "QRCodePreferences";
 
-    final Gson gson;
     final SharedPreferences sharedpreferences;
     final SharedPreferences.Editor editor;
     final Context context;
@@ -17,7 +14,6 @@ public class SessionManagement {
         this.context = mContext;
         sharedpreferences = context.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         editor = sharedpreferences.edit();
-        gson = new Gson();
     }
 
     public void setCountry(String country) {
@@ -27,6 +23,24 @@ public class SessionManagement {
 
     public String getCountry() {
         return sharedpreferences.getString("country", "");
+    }
+
+    public void setIsFirstTime(boolean value) {
+        editor.putBoolean("is_first_time", value);
+        editor.commit();
+    }
+
+    public boolean getIsFirstTime() {
+        return sharedpreferences.getBoolean("is_first_time", true);
+    }
+
+    public void setIsRated(boolean value) {
+        editor.putBoolean("is_rated", value);
+        editor.commit();
+    }
+
+    public boolean getIsRated() {
+        return sharedpreferences.getBoolean("is_rated", false);
     }
 
 }
