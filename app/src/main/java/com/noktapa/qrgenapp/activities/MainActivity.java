@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements CountryNameListen
         }
         else
         {
-            countryTextView.setText(String.format("%s %s", sessionManagement.getCountry(), countryTextView.getText()));
+//            countryTextView.setText(String.format("%s %s", sessionManagement.getCountry(), countryTextView.getText()));
         }
 
         char letter =  RandomLetterFromWord.getRandomLetter();
@@ -50,14 +50,13 @@ public class MainActivity extends AppCompatActivity implements CountryNameListen
         {
             startActivity(new Intent(MainActivity.this, WebViewActivity.class));
         }
-
     }
 
     // Implement the callback method
     @Override
     public void onCountryNameReceived(String countryName) {
         sessionManagement.setCountry(countryName);
-        countryTextView.setText(String.format("%s %s", sessionManagement.getCountry(), countryTextView.getText()));
+//        countryTextView.setText(String.format("%s %s", sessionManagement.getCountry(), countryTextView.getText()));
     }
 
 }
